@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rob_Final_Project</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body onload="pageDisplay(); displayEmptyCart();">
+    <header id="wrapper">
+      <h1>Guitars 'R' Us</h1>
+      <span id="dateArea" style="float: right">Date/Time</span>
+      <br />
+
+      <span id="currencyContainer" style="float: right">
+        Currency:
+        <img class="currencyFlag" src="img/canada-flag-.jpg" />
+        <select name="currencySelector" id="currencySelector">
+          <option selected value="CAD">CAD</option>
+          <option value="USD">USD</option>
+        </select>
+      </span>
+    </header>
+
+    <p id="filter">Filter product by brand</p>
+    <select id="displayFilter" onchange="showMenu();">
+      <option>All</option>
+    </select>
+    <div id="inventoryOutput"></div>
+
+    <div class="gridContainer">
+      <div>
+        <legend>Your Cart</legend>
+        <div class="backgroundContainer">
+          <br />
+          <div id="cartOutput"></div>
+          <div id="button">
+            <button id="emptyCartBtn" type="submit" onclick="clearCart();">Empty cart</button>
+          </div>
+          <br />
+        </div>
+      </div>
+
+      <div id="totals" onmousedown="return false" onselectstart="return false">
+        <legend class="totalsLegend">Totals</legend>
+        <div id="totalsDisplay">
+          <div id="innerTotalsDisplay">
+            <div class="input">
+              <label for="">Subtotal:</label>
+              <input type="text" name="" class="subTotal" />
+            </div>
+            <div class="input">
+              <label for="">Shipping:</label>
+              <input type="text" name="" class="subTotal" />
+            </div>
+            <div class="input">
+              <label for="">Subtotal:</label>
+              <input type="text" name="" class="subTotal" />
+            </div>
+            <div class="input">
+              <label for="">Tax:</label>
+              <input type="text" name="" class="subTotal" />
+            </div>
+            <div class="input">
+              <label for="">Total:</label>
+              <input type="text" name="" class="subTotal" />
+            </div>
+          </div>
+        </div>
+        <br />
+      </div>
+    </div>
+    <div id="reviewContainer">
+      <legend>Review an Item</legend>
+      <div class="backgroundContainer">
+        <div id="review">
+          <p id="productID">Product ID:</p>
+          <input type="text" id="reviewId" />&nbsp;<span id="reviewIdMsg"></span>
+          <p>Review:Max 100 characters</p>
+          <textarea id="reviewDesc" rows="5" cols="40" maxlength="100" ></textarea>
+          <p>Rating:1-5</p>
+          <input type="number" id="reviewNum" />&nbsp;<span id="addRatingValidationMessage"></span>
+          <p><input type="button" value="Review" onclick="review(reviewId.value);" /></p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="footer">
+        <p>Copyright &copy 2022</p>
+      </div>
+    </footer>
+
+    <!-- Javascript -->
+
+    <script src="index.js"></script>
+    <script src="pageDisplay_Function.js"></script>
+  </body>
+</html>
